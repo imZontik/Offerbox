@@ -4,7 +4,7 @@ from sqlalchemy import Column, UUID, String
 
 import uuid
 
-
+ 
 class UserModel(Base):
     __tablename__ = "users"
 
