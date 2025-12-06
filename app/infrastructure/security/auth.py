@@ -7,7 +7,7 @@ from passlib.context import CryptContext
 
 from app.config.settings import settings
 from app.modules.auth.dependencies import get_user_service
-from app.modules.auth.models import UserModel
+from app.modules.auth.models import AuthUserModel
 from app.modules.auth.services import UserService
 
 pwd_context = CryptContext(
@@ -47,7 +47,7 @@ async def authenticate_user(
         email: str,
         password: str,
         service: UserService = Depends(get_user_service)
-) -> UserModel | None:
+) -> AuthUserModel | None:
     user = await service.find_by_email(email)
 
     if user and verify_password(password, user.hashed_password):

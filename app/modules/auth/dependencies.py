@@ -9,7 +9,7 @@ from starlette import status
 from app.config.settings import settings
 from app.infrastructure.database.dependencies import get_repository_factory
 from app.infrastructure.database.factory import RepositoryFactory
-from app.modules.auth.models import UserModel
+from app.modules.auth.models import AuthUserModel
 from app.modules.auth.repository import UserRepository
 from app.modules.auth.services import UserService
 
@@ -25,7 +25,7 @@ async def get_user_service(
 async def get_user(
         creds: HTTPAuthorizationCredentials = Security(bearer_scheme),
         service: UserService = Depends(get_user_service),
-) -> UserModel:
+) -> AuthUserModel:
     try:
         payload = jwt.decode(
             creds.credentials,

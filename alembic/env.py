@@ -10,7 +10,7 @@ from sqlalchemy.ext.asyncio import create_async_engine
 import asyncio
 
 from app.infrastructure.database.base import Base
-from app.modules.auth.models import UserModel
+from app.modules.auth.models import AuthUserModel
 
 from app.config.settings import settings
 
