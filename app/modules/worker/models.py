@@ -4,8 +4,8 @@ from sqlalchemy import Column, UUID, String, Integer
 import uuid
 
 
-class UserModel(Base):
-    __tablename__ = "user_workers"
+class WorkerModel(Base):
+    __tablename__ = "worker"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     first_name = Column(String, nullable=False)

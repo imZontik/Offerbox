@@ -11,7 +11,7 @@ import asyncio
 
 from app.infrastructure.database.base import Base
 from app.modules.auth.models import AuthUserModel
-from app.modules.user.models import UserModel
+from app.modules.worker.models import WorkerModel
 
 from app.config.settings import settings
 
