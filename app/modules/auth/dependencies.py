@@ -1,7 +1,5 @@
 from uuid import UUID
 
-from fastapi.params import Depends
-
 from fastapi import HTTPException
 from fastapi.params import Depends, Security
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials

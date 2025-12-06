@@ -2,6 +2,8 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
+from app.modules.auth.routers import router as auth_router
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -15,6 +17,8 @@ def create_app():
         version="1.0",
         lifespan=lifespan
     )
+
+    _app.include_router(auth_router)
 
     return _app
 
